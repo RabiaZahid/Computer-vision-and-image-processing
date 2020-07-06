@@ -3,19 +3,19 @@ import numpy as np
 pic=cv2.imread('apple.jpg',0)
 height,width=pic.shape
 
-sobel_x = cv2.Sobel(pic,cv2.CV_64F, 1, 0, ksize=5)
-sobel_y = cv2.Sobel(pic,cv2.CV_64F, 0, 1, ksize=5)
+output_x = cv2.Sobel(pic,cv2.CV_64F, 1, 0, ksize=5)
+output_y = cv2.Sobel(pic,cv2.CV_64F, 0, 1, ksize=5)
 
 cv2.imshow('original pic',pic)
 cv2.waitKey(0)
 
-cv2.imshow('Sobel X pic',sobel_x)
+cv2.imshow('Sobel X pic',output_x)
 cv2.waitKey(0)
 
-cv2.imshow('Sobel Y pic',sobel_y)
+cv2.imshow('Sobel Y pic',output_y)
 cv2.waitKey(0)
 
-sobel_Or = cv2.bitwise_or(sobel_x,sobel_y)
+sobel_Or = cv2.bitwise_or(output_x,output_y)
 cv2.imshow('sobel or pic',sobel_Or)
 cv2.waitKey(0)
 
